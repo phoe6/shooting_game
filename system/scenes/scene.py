@@ -15,12 +15,11 @@ EASY, NORMAL, HARD = (0, 1, 2)
 class Scene:
 
 	def __init__(self, screen):
-		from . import collision
 		self.screen = screen
 		self.easy_mode = EasyMode(screen)
 		self.normal_mode = NormalMode(screen)
 		self.hard_mode = HardMode(screen)
-		Explosion.images = collision.Collision.split_image('./images/bomb.png', 8, 2)
+		Explosion.images = Collision.split_image('./images/bomb.png', 8, 2)
 
 
 	def draw(self):
