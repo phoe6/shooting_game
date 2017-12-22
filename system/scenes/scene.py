@@ -68,20 +68,21 @@ class Scene:
 
 	def mode_change(self):
 		key = pygame.key.get_pressed()
-		if key[K_e]:
+
+		if key[K_e] or key[K_n] or key[K_h]:
 			Scene.game_status = PLAY
+
+		if key[K_e]:
 			Scene.game_mode = EASY
 			self.easy_mode.game_init()
 			Explosion.containers = self.easy_mode.all
 
 		elif key[K_n]:
-			Scene.game_status = PLAY
 			Scene.game_mode = NORMAL
 			self.normal_mode.game_init()
 			Explosion.containers = self.normal_mode.all
 			
 		elif key[K_h]:
-			Scene.game_status = PLAY
 			Scene.game_mode = HARD
 			self.hard_mode.game_init()
 			Explosion.containers = self.hard_mode.all

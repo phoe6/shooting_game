@@ -7,14 +7,15 @@ START, PLAY, GAMEOVER = (0, 1, 2)
 
 class Collision:
 
+	exp_action = lambda obj: list(map(lambda e: explosion.Explosion(e.rect.center), obj))
+
 	@staticmethod
 	def coll_easy(player, enemy, pball, eball):
 		player_collided = pygame.sprite.spritecollide(player, eball, True)
 		enemy_collided = pygame.sprite.groupcollide(enemy, pball, True, True)
 		ball_collided = pygame.sprite.groupcollide(pball, eball, True, True)
-		
-		for enemy in enemy_collided.keys():
-			explosion.Explosion(enemy.rect.center)
+
+		Collision.exp_action(enemy_collided)
 
 		if player_collided:
 			player.kill()
@@ -28,8 +29,7 @@ class Collision:
 		boss_collided = pygame.sprite.groupcollide(boss, pball, True, True)
 		ball_collided = pygame.sprite.groupcollide(pball, bball, True, True)
 
-		for boss in boss_collided.keys():
-			explosion.Explosion(boss.rect.center)
+		Collision.exp_action(boss_collided)
 
 		if player_collided:
 			player.kill()
@@ -45,8 +45,8 @@ class Collision:
 		enemy_collided = pygame.sprite.groupcollide(enemy, pball, True, True)
 		ball_collided = pygame.sprite.groupcollide(pball, eball, True, True)
 
-		for enemy in enemy_collided.keys(): explosion.Explosion(enemy.rect.center)
-		for boss in boss_collided.keys(): explosion.Explosion(boss.rect.center)
+		Collision.exp_action(boss_collided)
+		Collision.exp_action(enemy_collided)
 
 		if player_boss_collided or player_enemy_collided:
 			player.kill()
