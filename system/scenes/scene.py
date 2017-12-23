@@ -19,7 +19,17 @@ class Scene:
 		self.easy_mode = EasyMode(screen)
 		self.normal_mode = NormalMode(screen)
 		self.hard_mode = HardMode(screen)
+		self.all = pygame.sprite.RenderUpdates()
+		StartAnimation.containers = self.all
+		StartAnimation.path = pygame.image.load('./images/boss.png')
 		Explosion.images = Collision.split_image('./images/bomb.png', 8, 2)
+		self.animation_init()
+
+
+	def animation_init(self):
+		StartAnimation(self.screen, 60, 60, self.screen.get_width()/8, self.screen.get_height()/5, 3)
+		StartAnimation(self.screen, 120, 120, self.screen.get_width()/8, self.screen.get_height()/1.5, 6)
+		StartAnimation(self.screen, 200, 200, self.screen.get_width()/1.2, self.screen.get_height()/3, 5)
 
 
 	def draw(self):
@@ -36,6 +46,7 @@ class Scene:
 			self.screen.blit(easy, ((self.screen.get_width())/3, 170))
 			self.screen.blit(normal, ((self.screen.get_width())/3, 220))
 			self.screen.blit(hard, ((self.screen.get_width())/3, 270))
+			self.all.update()
 			self.mode_change()
 
 		elif Scene.game_status == PLAY:
@@ -55,6 +66,7 @@ class Scene:
 			retry_font = pygame.font.SysFont(None, 50)
 			retry = retry_font.render('>> continue ? (Press c)', False, (200, 0, 0))
 			self.screen.blit(retry, ((self.screen.get_width())/3.5, 200))
+			self.all.update()
 			self.game_continue()
 
 		elif Scene.game_status == CLEAR:
@@ -63,6 +75,7 @@ class Scene:
 			retry_font = pygame.font.SysFont(None, 50)
 			retry = retry_font.render('>> continue ? (Press c)', False, (200, 0, 0))
 			self.screen.blit(retry, ((self.screen.get_width())/3.5, 200))
+			self.all.update()
 			self.game_continue()
 
 
