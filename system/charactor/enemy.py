@@ -57,3 +57,13 @@ class Boss(Enemy):
 			self.angle = 0
 		if Boss.prob_ball < random.random():
 			bball = BossBall(self.disp, 3, 3, self.rect.x+self.image.get_width()/2, self.rect.y+self.image.get_height()/2, random.randint(180, 359))
+
+
+class StartAnimation(Boss):
+
+	def __init__(self, disp, w, h, move_x, move_y, speed):
+		super().__init__(disp, w, h, move_x, move_y, speed)
+
+	def update(self):
+		self.image_rotation()
+
