@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 import pygame
 
+'''
+キャラクターの元になるクラス
+'''
 class BaseCharactor(pygame.sprite.Sprite):
 	
 	def __init__(self, w, h, move_x, move_y):

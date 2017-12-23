@@ -4,6 +4,10 @@ from ..charactor.player import *
 from ..charactor.enemy import *
 from ..charactor.ball import *
 
+'''
+イージー用のクラス
+sceneモジュールで使う。
+'''
 class EasyMode:
 
 	def __init__(self, screen): 

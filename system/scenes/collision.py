@@ -5,6 +5,10 @@ from . import scene, explosion
 
 START, PLAY, GAMEOVER = (0, 1, 2)
 
+'''
+イージー、ノーマル、ハードそれぞれで衝突判定をするクラス
+ついでに爆破のアニメーションもする。
+'''
 class Collision:
 
 	exp_action = lambda obj: list(map(lambda e: explosion.Explosion(e.rect.center), obj))

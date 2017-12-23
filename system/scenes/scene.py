@@ -12,6 +12,9 @@ from .collision import Collision
 START, PLAY, GAMEOVER, CLEAR = (0, 1, 2, 3)
 EASY, NORMAL, HARD = (0, 1, 2)
 
+'''
+ここで画面を変えたりする。
+'''
 class Scene:
 
 	def __init__(self, screen):

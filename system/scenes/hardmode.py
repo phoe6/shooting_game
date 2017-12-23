@@ -4,6 +4,10 @@ from ..charactor.player import *
 from ..charactor.enemy import *
 from ..charactor.ball import *
 
+'''
+ハード用のクラス
+sceneモジュールで使う。
+'''
 class HardMode:
 	
 	def __init__(self, screen): 

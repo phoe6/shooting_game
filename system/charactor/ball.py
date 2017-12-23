@@ -5,6 +5,9 @@ from pygame.key import *
 from pygame.locals import *
 from .base_char import BaseCharactor
 
+'''
+プレイヤーのボール
+'''
 class PlayerBall(BaseCharactor):
 
 	def __init__(self, w, h, move_x, move_y):
@@ -18,6 +21,9 @@ class PlayerBall(BaseCharactor):
 			self.rect.y -= 10
 
 
+'''
+敵のボール
+'''
 class EnemyBall(PlayerBall):
 
 	def __init__(self, disp, w, h, move_x, move_y):
@@ -32,6 +38,11 @@ class EnemyBall(PlayerBall):
 			self.rect.y += 10
 
 
+'''
+ボス（歯車のボール）
+斜めに飛ばすので、飛ばす角度（rad）からtanを求める。
+0.1ずつcosを移動させsinを求め動かす。
+'''
 class BossBall(EnemyBall):
 
 	def __init__(self, disp, w, h, move_x, move_y, angle):

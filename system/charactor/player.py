@@ -6,6 +6,10 @@ from pygame.locals import *
 from .base_char import BaseCharactor
 from .ball import PlayerBall
 
+'''
+プレイヤーのクラス
+横に移動するため、画面からはみ出ないようにする。
+'''
 class Player(BaseCharactor):
 
 	reload_time = 50

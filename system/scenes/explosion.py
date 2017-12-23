@@ -3,6 +3,7 @@ import pygame, sys
 
 '''
 エクスプロージョン！！
+敵とぶつかった際に爆破するアニメーションをするクラス
 '''
 
 class Explosion(pygame.sprite.Sprite):

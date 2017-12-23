@@ -4,6 +4,10 @@ import pygame
 from .base_char import BaseCharactor
 from .ball import *
 
+'''
+敵のクラス
+エイリアンを左右に移動させる。
+'''
 class Enemy(BaseCharactor):
 	
 	prob_ball = 0.008
@@ -32,6 +36,10 @@ class Enemy(BaseCharactor):
 			eball = EnemyBall(self.disp, 2, 15, self.rect.x+self.image.get_width()/2, self.rect.y+15)
 
 
+'''
+ボスのクラス
+こいつは回転させるけれどtransform.rotate()を使うと左上を軸に回転するので、image_rotation()でズレを戻す。
+'''
 class Boss(Enemy):
 
 	prob_ball = None
@@ -59,6 +67,10 @@ class Boss(Enemy):
 			bball = BossBall(self.disp, 3, 3, self.rect.x+self.image.get_width()/2, self.rect.y+self.image.get_height()/2, random.randint(180, 359))
 
 
+'''
+歯車のアニメーションをするクラス。
+スタート、クリア、コンティニューの画面用で使う。（画面が寂しいため）
+'''
 class StartAnimation(Boss):
 
 	def __init__(self, disp, w, h, move_x, move_y, speed):

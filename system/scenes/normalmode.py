@@ -4,6 +4,10 @@ from ..charactor.player import *
 from ..charactor.enemy import *
 from ..charactor.ball import *
 
+'''
+ノーマル用のクラス
+sceneモジュールで使う。
+'''
 class NormalMode:
 
 	def __init__(self, screen): 

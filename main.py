@@ -2,6 +2,9 @@
 import sys, pygame
 import system.scenes.scene as scene
 
+'''
+Sceneクラスのインスタンスをつくって、ごにょごにょするだけ。
+'''
 START, PLAY, GAMEOVER = (0, 1, 2)
 
 if __name__ == '__main__':
