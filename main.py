@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 import sys, pygame
 import system.scenes.scene as scene
+from system.state import *
 
 '''
 Sceneクラスのインスタンスをつくって、ごにょごにょするだけ。
 '''
-START, PLAY, GAMEOVER = (0, 1, 2)
-
 if __name__ == '__main__':
     pygame.init()
     pygame.display.set_caption('Invaders game')
