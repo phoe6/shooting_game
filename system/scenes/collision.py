@@ -2,8 +2,7 @@
 import pygame, sys
 from pygame.locals import *
 from . import scene, explosion
-
-START, PLAY, GAMEOVER = (0, 1, 2)
+from ..state import *
 
 '''
 イージー、ノーマル、ハードそれぞれで衝突判定をするクラス

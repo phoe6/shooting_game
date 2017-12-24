@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import pygame
+from ..state import *
 from ..charactor.player import *
 from ..charactor.enemy import *
 from ..charactor.ball import *
@@ -9,8 +10,6 @@ from .hardmode import HardMode
 from .explosion import Explosion
 from .collision import Collision
 
-START, PLAY, GAMEOVER, CLEAR = (0, 1, 2, 3)
-EASY, NORMAL, HARD = (0, 1, 2)
 
 '''
 ここで画面を変えたりする。
